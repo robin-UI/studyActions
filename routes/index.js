@@ -24,4 +24,9 @@ router.post('sign', async function(req, res){
   }
 })
 
+router.post('login', async function(req, res){
+  let user = Users.findOne({name: req.body.name})
+  res.status(200).json({mess: "you are hear", user: user})
+})
+
 module.exports = router;
