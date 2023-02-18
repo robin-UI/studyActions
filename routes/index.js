@@ -7,13 +7,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/gets', async function(req, res) {
+router.get('gets', async function(req, res) {
   let user = await Users.find();
   console.log(user);
   res.status(200).json({sms: "hii alll", user: user})
 })
 
-router.post('/sign', async function(req, res){
+router.post('sign', async function(req, res){
   console.log(req.body);
   let createuser = await Users.create({
     name: req.body.name,
